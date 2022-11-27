@@ -10,4 +10,14 @@ package cine;
  */
 public class cCine {
     
+    private String sala;
+    private int numeroAsientos;
+    private int cantNiños;
+    private int cantAdultos;
+
+    public cCine() {
+    }
+    
+    
+    
 }
