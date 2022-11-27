@@ -21,11 +21,21 @@ public class cCine {
       this.cantNiños = cantNiños;
       this.cantAdultos = cantAdultos;      
     }
-    
-    
-    
-    
-    
-    
-    
+
+    public void setSala(String sala) {
+        this.sala = sala;
+    }
+
+    public void setNumeroAsientos(int numeroAsientos) {
+        this.numeroAsientos = numeroAsientos;
+    }
+
+    public void setCantNiños(int cantNiños) {
+        this.cantNiños = cantNiños;
+    }
+
+    public void setCantAdultos(int cantAdultos) {
+        this.cantAdultos = cantAdultos;
+    }
+  
 }
