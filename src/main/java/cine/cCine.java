@@ -15,8 +15,15 @@ public class cCine {
     private int cantNiños;
     private int cantAdultos;
 
-    public cCine() {
+    public cCine(String sala, int numAsientos, int cantNiños, int cantAdultos ) {
+      this.sala = sala;
+      this.numeroAsientos = numAsientos;
+      this.cantNiños = cantNiños;
+      this.cantAdultos = cantAdultos;      
     }
+    
+    
+    
     
     
     
