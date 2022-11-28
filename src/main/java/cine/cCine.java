@@ -12,14 +12,14 @@ public class cCine {
     
     private String sala;
     private int numeroAsientos;
-    private int cantNiños;
-    private int cantAdultos;
+    private int preciotNiños;
+    private int precioAdultos;
 
-    public cCine(String sala, int numAsientos, int cantNiños, int cantAdultos ) {
+    public cCine(String sala, int numAsientos, int preciotNiños, int precioAdultos ) {
       this.sala = sala;
       this.numeroAsientos = numAsientos;
-      this.cantNiños = cantNiños;
-      this.cantAdultos = cantAdultos;      
+      this.preciotNiños = preciotNiños;
+      this.precioAdultos = precioAdultos;      
     }
 
     public void setSala(String sala) {
@@ -30,12 +30,13 @@ public class cCine {
         this.numeroAsientos = numeroAsientos;
     }
 
-    public void setCantNiños(int cantNiños) {
-        this.cantNiños = cantNiños;
+    public void setPreciotNiños(int cantNiños) {
+        this.preciotNiños = cantNiños;
     }
 
-    public void setCantAdultos(int cantAdultos) {
-        this.cantAdultos = cantAdultos;
+    public void setCantAdultos(int precioAdultos) {
+        this.precioAdultos = precioAdultos;
     }
   
+    
 }
