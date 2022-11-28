@@ -37,6 +37,24 @@ public class cCine {
     public void setCantAdultos(int precioAdultos) {
         this.precioAdultos = precioAdultos;
     }
-  
-    
+
+    @Override
+    public String toString() {
+        return "cCine{" +
+                "sala='" + sala + '\'' +
+                ", numeroAsientos=" + numeroAsientos +
+                ", preciotNiños=" + preciotNiños +
+                ", precioAdultos=" + precioAdultos +
+                '}';
+    }
 }
+/*
+* String nomSala = "";
+        nomSala = jLabelNombreSala.getText();
+
+        int asientos,precNiños, precAdultos;
+        asientos = jLabelNumAsientos();
+        precNiños = jLabelPrecioNiños();
+        precAdultos = jLabelPrecioAdultos();
+
+        cCine salaCine = new cCine(nomSala,asientos,precNiños, precAdultos);*/
