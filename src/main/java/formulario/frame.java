@@ -28,20 +28,16 @@ public class frame extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabelNombreSala = new javax.swing.JLabel();
-        nombreSala = new javax.swing.JTextField();
+        NombreSala = new javax.swing.JTextField();
         jLabelNumAsientos = new javax.swing.JLabel();
-        numAsientos = new javax.swing.JTextField();
-        jLabelPrecioNiños = new javax.swing.JLabel();
-        precioNiños = new javax.swing.JTextField();
-        jLabelPrecioAdultos = new javax.swing.JLabel();
-        PrecioAdultos = new javax.swing.JTextField();
-        crearSala = new javax.swing.JButton();
+        NumAsientos = new javax.swing.JTextField();
+        jLabelPrecio = new javax.swing.JLabel();
+        Precio = new javax.swing.JTextField();
+        CrearSala = new javax.swing.JButton();
         jLabelSala = new javax.swing.JLabel();
         jComboBoxSala = new javax.swing.JComboBox<>();
-        jLabelCantNiños = new javax.swing.JLabel();
-        cantNiños = new javax.swing.JTextField();
-        jLabelCantAdultos = new javax.swing.JLabel();
-        cantAdultos = new javax.swing.JTextField();
+        jLabelBoletosVendidos = new javax.swing.JLabel();
+        BoletosVendidos = new javax.swing.JTextField();
         obtnerImporteTotal = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -50,46 +46,36 @@ public class frame extends javax.swing.JFrame {
 
         jLabelNombreSala.setText("Nombre sala");
 
-        nombreSala.addActionListener(new java.awt.event.ActionListener() {
+        NombreSala.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreSalaActionPerformed(evt);
+                NombreSalaActionPerformed(evt);
             }
         });
 
         jLabelNumAsientos.setText("Numero de asientos");
 
-        jLabelPrecioNiños.setText("Precio niños");
+        jLabelPrecio.setText("Precio ");
 
-        precioNiños.addActionListener(new java.awt.event.ActionListener() {
+        Precio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                precioNiñosActionPerformed(evt);
+                PrecioActionPerformed(evt);
             }
         });
 
-        jLabelPrecioAdultos.setText("Precio adutos");
-
-        crearSala.setText("Crear Sala");
-        crearSala.addActionListener(new java.awt.event.ActionListener() {
+        CrearSala.setText("Crear Sala");
+        CrearSala.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                crearSalaActionPerformed(evt);
+                CrearSalaActionPerformed(evt);
             }
         });
 
         jLabelSala.setText("Sala");
 
-        jLabelCantNiños.setText("Cantidad de niños");
+        jLabelBoletosVendidos.setText("Boletos vendidos");
 
-        cantNiños.addActionListener(new java.awt.event.ActionListener() {
+        BoletosVendidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cantNiñosActionPerformed(evt);
-            }
-        });
-
-        jLabelCantAdultos.setText("Cantidad de adultos");
-
-        cantAdultos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cantAdultosActionPerformed(evt);
+                BoletosVendidosActionPerformed(evt);
             }
         });
 
@@ -110,131 +96,98 @@ public class frame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(crearSala, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelNumAsientos)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(numAsientos, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelNombreSala, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nombreSala, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(107, 107, 107)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelPrecioNiños, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(precioNiños, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelPrecioAdultos, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(PrecioAdultos, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(42, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelNombreSala, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelNumAsientos)
+                    .addComponent(jLabelPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(NombreSala, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                    .addComponent(NumAsientos)
+                    .addComponent(Precio))
+                .addGap(192, 192, 192))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(obtnerImporteTotal)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(obtnerImporteTotal)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabelCantAdultos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabelCantNiños, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabelSala, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(27, 27, 27)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(cantAdultos, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cantNiños, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBoxSala, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(1, 1, 1)))
-                .addGap(122, 122, 122))
+                            .addComponent(jLabelSala, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CrearSala, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelBoletosVendidos, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBoxSala, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BoletosVendidos, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(nombreSala)
-                            .addComponent(jLabelNombreSala, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(numAsientos)
-                            .addComponent(jLabelNumAsientos, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelPrecioNiños, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(precioNiños))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(PrecioAdultos)
-                            .addComponent(jLabelPrecioAdultos, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelNombreSala, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NombreSala))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(crearSala)
-                .addGap(58, 58, 58)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jComboBoxSala)
-                    .addComponent(jLabelSala, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(NumAsientos)
+                    .addComponent(jLabelNumAsientos, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Precio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(CrearSala)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelCantNiños)
-                    .addComponent(cantNiños, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBoxSala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelSala))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cantAdultos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelCantAdultos))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabelBoletosVendidos)
+                    .addComponent(BoletosVendidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
                 .addComponent(obtnerImporteTotal)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void crearSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearSalaActionPerformed
+    private void CrearSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearSalaActionPerformed
 
 
         //instanciando la clase cCine dando como parametros los valores de los campos de texto:
         cCine cine = new cCine(
-                nombreSala.getText(),
-                Integer.parseInt(numAsientos.getText()),
-                Integer.parseInt(precioNiños.getText()),
-                Integer.parseInt(PrecioAdultos.getText())
+                NombreSala.getText(),
+                Integer.parseInt(NumAsientos.getText()),
+                Integer.parseInt(Precio.getText())   
         );
 
         //obteniendo el toString de la clase cCine y mostrandolo en el campo de texto:
         jTextArea1.setText(cine.toString());
 
         
-    }//GEN-LAST:event_crearSalaActionPerformed
+    }//GEN-LAST:event_CrearSalaActionPerformed
 
-    private void cantNiñosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cantNiñosActionPerformed
+    private void BoletosVendidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoletosVendidosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cantNiñosActionPerformed
+    }//GEN-LAST:event_BoletosVendidosActionPerformed
 
-    private void precioNiñosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precioNiñosActionPerformed
+    private void PrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrecioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_precioNiñosActionPerformed
-
-    private void cantAdultosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cantAdultosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cantAdultosActionPerformed
+    }//GEN-LAST:event_PrecioActionPerformed
 
     private void obtnerImporteTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obtnerImporteTotalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_obtnerImporteTotalActionPerformed
 
-    private void nombreSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreSalaActionPerformed
+    private void NombreSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreSalaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nombreSalaActionPerformed
+    }//GEN-LAST:event_NombreSalaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -272,24 +225,20 @@ public class frame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField PrecioAdultos;
-    private javax.swing.JTextField cantAdultos;
-    private javax.swing.JTextField cantNiños;
-    private javax.swing.JButton crearSala;
+    private javax.swing.JTextField BoletosVendidos;
+    private javax.swing.JButton CrearSala;
+    private javax.swing.JTextField NombreSala;
+    private javax.swing.JTextField NumAsientos;
+    private javax.swing.JTextField Precio;
     private javax.swing.JComboBox<String> jComboBoxSala;
-    private javax.swing.JLabel jLabelCantAdultos;
-    private javax.swing.JLabel jLabelCantNiños;
+    private javax.swing.JLabel jLabelBoletosVendidos;
     private javax.swing.JLabel jLabelNombreSala;
     private javax.swing.JLabel jLabelNumAsientos;
-    private javax.swing.JLabel jLabelPrecioAdultos;
-    private javax.swing.JLabel jLabelPrecioNiños;
+    private javax.swing.JLabel jLabelPrecio;
     private javax.swing.JLabel jLabelSala;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField nombreSala;
-    private javax.swing.JTextField numAsientos;
     private javax.swing.JButton obtnerImporteTotal;
-    private javax.swing.JTextField precioNiños;
     // End of variables declaration//GEN-END:variables
 
     private int jLabelNumAsientos() {
