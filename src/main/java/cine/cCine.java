@@ -40,21 +40,9 @@ public class cCine {
 
     @Override
     public String toString() {
-        return "cCine{" +
-                "sala='" + sala + '\'' +
-                ", numeroAsientos=" + numeroAsientos +
-                ", preciotNiños=" + preciotNiños +
-                ", precioAdultos=" + precioAdultos +
-                '}';
+        return  "sala = '" + sala + "'" + 
+                "\nnumeroAsientos = " + numeroAsientos +
+                "\npreciotNiños = " + preciotNiños +
+                "\nprecioAdultos = " + precioAdultos ;
     }
 }
-/*
-* String nomSala = "";
-        nomSala = jLabelNombreSala.getText();
-
-        int asientos,precNiños, precAdultos;
-        asientos = jLabelNumAsientos();
-        precNiños = jLabelPrecioNiños();
-        precAdultos = jLabelPrecioAdultos();
-
-        cCine salaCine = new cCine(nomSala,asientos,precNiños, precAdultos);*/
