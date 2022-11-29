@@ -12,14 +12,14 @@ public class cCine {
     
     private String sala;
     private int numeroAsientos;
-    private int preciotNiños;
-    private int precioAdultos;
+    private int precioEntrada;
 
-    public cCine(String sala, int numAsientos, int preciotNiños, int precioAdultos ) {
+
+    public cCine(String sala, int numAsientos, int precioEntrada ) {
       this.sala = sala;
       this.numeroAsientos = numAsientos;
-      this.preciotNiños = preciotNiños;
-      this.precioAdultos = precioAdultos;      
+      this.precioEntrada = precioEntrada;
+       
     }
 
     public void setSala(String sala) {
@@ -30,19 +30,16 @@ public class cCine {
         this.numeroAsientos = numeroAsientos;
     }
 
-    public void setPreciotNiños(int cantNiños) {
-        this.preciotNiños = cantNiños;
-    }
-
-    public void setCantAdultos(int precioAdultos) {
-        this.precioAdultos = precioAdultos;
+    public void setPrecioEntrada(int precioEntrada) {
+        this.precioEntrada = precioEntrada;
     }
 
     @Override
     public String toString() {
-        return  "sala = '" + sala + "'" + 
-                "\nnumeroAsientos = " + numeroAsientos +
-                "\npreciotNiños = " + preciotNiños +
-                "\nprecioAdultos = " + precioAdultos ;
+        return "cCine{" + "sala=" + sala + ", numeroAsientos=" + numeroAsientos + ", precioEntrada=" + precioEntrada + '}';
     }
+
+   
+
+   
 }

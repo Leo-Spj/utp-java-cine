@@ -23,65 +23,40 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="crearSala" min="-2" pref="437" max="-2" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabelNumAsientos" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="numAsientos" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabelNombreSala" min="-2" pref="72" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="nombreSala" min="-2" pref="88" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabelPrecioNiños" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="precioNiños" min="-2" pref="74" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabelPrecioAdultos" min="-2" pref="84" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="PrecioAdultos" min="-2" pref="74" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabelNombreSala" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
+                  <Component id="jLabelNumAsientos" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelPrecio" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="42" max="32767" attributes="0"/>
+              <EmptySpace pref="66" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="NombreSala" pref="115" max="32767" attributes="0"/>
+                  <Component id="NumAsientos" max="32767" attributes="0"/>
+                  <Component id="Precio" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane1" min="-2" pref="262" max="-2" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
+                  <Component id="obtnerImporteTotal" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="obtnerImporteTotal" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jLabelCantAdultos" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabelCantNiños" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabelSala" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="cantAdultos" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="cantNiños" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jComboBoxSala" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="jLabelSala" min="-2" pref="135" max="-2" attributes="0"/>
+                          <Component id="CrearSala" min="-2" pref="106" max="-2" attributes="0"/>
+                          <Component id="jLabelBoletosVendidos" alignment="1" min="-2" pref="135" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jComboBoxSala" min="-2" pref="99" max="-2" attributes="0"/>
+                          <Component id="BoletosVendidos" min="-2" pref="99" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -89,53 +64,37 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="nombreSala" max="32767" attributes="0"/>
-                          <Component id="jLabelNombreSala" min="-2" pref="28" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="numAsientos" max="32767" attributes="0"/>
-                          <Component id="jLabelNumAsientos" min="-2" pref="28" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabelPrecioNiños" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="precioNiños" alignment="3" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="PrecioAdultos" max="32767" attributes="0"/>
-                          <Component id="jLabelPrecioAdultos" min="-2" pref="28" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelNombreSala" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="NombreSala" alignment="3" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="crearSala" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jComboBoxSala" max="32767" attributes="0"/>
-                  <Component id="jLabelSala" max="32767" attributes="0"/>
+                  <Component id="NumAsientos" max="32767" attributes="0"/>
+                  <Component id="jLabelNumAsientos" min="-2" pref="28" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelPrecio" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="Precio" alignment="3" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace pref="12" max="32767" attributes="0"/>
+              <Component id="CrearSala" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jComboBoxSala" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelSala" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabelCantNiños" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cantNiños" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelBoletosVendidos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BoletosVendidos" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="cantAdultos" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabelCantAdultos" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="obtnerImporteTotal" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="104" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -146,9 +105,9 @@
         <Property name="text" type="java.lang.String" value="Nombre sala"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="nombreSala">
+    <Component class="javax.swing.JTextField" name="NombreSala">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreSalaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NombreSalaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelNumAsientos">
@@ -156,31 +115,24 @@
         <Property name="text" type="java.lang.String" value="Numero de asientos"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="numAsientos">
+    <Component class="javax.swing.JTextField" name="NumAsientos">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabelPrecioNi&#xf1;os">
+    <Component class="javax.swing.JLabel" name="jLabelPrecio">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Precio ni&#xf1;os"/>
+        <Property name="text" type="java.lang.String" value="Precio "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="precioNi&#xf1;os">
+    <Component class="javax.swing.JTextField" name="Precio">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="precioNi&#xf1;osActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PrecioActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabelPrecioAdultos">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Precio adutos"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="PrecioAdultos">
-    </Component>
-    <Component class="javax.swing.JButton" name="crearSala">
+    <Component class="javax.swing.JButton" name="CrearSala">
       <Properties>
         <Property name="text" type="java.lang.String" value="Crear Sala"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="crearSalaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CrearSalaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelSala">
@@ -198,24 +150,14 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabelCantNi&#xf1;os">
+    <Component class="javax.swing.JLabel" name="jLabelBoletosVendidos">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cantidad de ni&#xf1;os"/>
+        <Property name="text" type="java.lang.String" value="Boletos vendidos"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="cantNi&#xf1;os">
+    <Component class="javax.swing.JTextField" name="BoletosVendidos">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cantNi&#xf1;osActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabelCantAdultos">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cantidad de adultos"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="cantAdultos">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cantAdultosActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BoletosVendidosActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="obtnerImporteTotal">
