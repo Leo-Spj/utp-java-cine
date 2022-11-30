@@ -3,14 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package formulario;
-import cine.cCine;
+
+import cine.controlCine;
+
+
+import java.awt.event.ActionEvent;
+import java.util.Objects;
 
 /**
  *
  * @author user
  */
 public class frame extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form frame
      */
@@ -28,8 +33,10 @@ public class frame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabelNombreSala = new javax.swing.JLabel();
         NombreSala = new javax.swing.JTextField();
         jLabelNumAsientos = new javax.swing.JLabel();
+        NumAsientos = new javax.swing.JTextField();
         jLabelPrecio = new javax.swing.JLabel();
         Precio = new javax.swing.JTextField();
         CrearSala = new javax.swing.JButton();
@@ -40,14 +47,15 @@ public class frame extends javax.swing.JFrame {
         obtnerImporteTotal = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        NumAsientos = new javax.swing.JTextField();
-        jLabelNombreSala = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(30, 160, 250));
+
+        jLabelNombreSala.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelNombreSala.setText("Nombre sala");
 
         NombreSala.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,9 +100,6 @@ public class frame extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
-
-        jLabelNombreSala.setBackground(new java.awt.Color(255, 255, 255));
-        jLabelNombreSala.setText("Nombre sala");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -209,24 +214,45 @@ public class frame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CrearSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearSalaActionPerformed
-
-
-        //instanciando la clase cCine dando como parametros los valores de los campos de texto:
-        cCine cine = new cCine(
-                NombreSala.getText(),
-                Integer.parseInt(NumAsientos.getText()),
-                Integer.parseInt(Precio.getText())   
-        );
-
-        //obteniendo el toString de la clase cCine y mostrandolo en el campo de texto:
-        jTextArea1.setText(cine.toString());
+    
+    private void CrearSalaActionPerformed(ActionEvent evt) {//GEN-FIRST:event_CrearSalaActionPerformed
 
         
+        
+        //si el boton ha sido ejecutado mas de una vez, ya no ejecutar la funcion controlCine():
+        int contador = 0;
+        if (contador == 0) {
+            new controlCine();
+            contador++;
+        }
+        
+        
+        //agregando nombre de sala al combobox
+        jComboBoxSala.addItem(NombreSala.getText());
+
+        //instanciando la clase cCine dando como parametros los valores de los campos de texto:
+        controlCine.crearSalaCine(
+            NombreSala.getText(),
+            Integer.parseInt(NumAsientos.getText()),
+            Integer.parseInt(Precio.getText())
+        );
+
+        //limpiando los campos de texto:
+        NombreSala.setText("");
+        NumAsientos.setText("");
+        Precio.setText("");
+
+        //comprobando que se haya creado la sala:
+        System.out.println(controlCine.obtenerSalaCineNombre(NombreSala.getText()));
+
+
+
+
     }//GEN-LAST:event_CrearSalaActionPerformed
 
     private void BoletosVendidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoletosVendidosActionPerformed
-        // TODO add your handling code here:
+
+
     }//GEN-LAST:event_BoletosVendidosActionPerformed
 
     private void PrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrecioActionPerformed
@@ -234,7 +260,29 @@ public class frame extends javax.swing.JFrame {
     }//GEN-LAST:event_PrecioActionPerformed
 
     private void obtnerImporteTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obtnerImporteTotalActionPerformed
-        // TODO add your handling code here:
+
+
+        //obtner el valor del combobox
+        //TIPADO FUERTE! DEJAR COMO RECORDATORIO: String nombreSala = Objects.requireNonNull(jComboBoxSala.getSelectedItem()).toString();
+
+        //obtener el valor de los boletos vendidos
+        int boletosVendidos = Integer.parseInt(BoletosVendidos.getText());
+        System.out.println(jComboBoxSala.getSelectedItem().toString());
+
+        //mediante el nombre de la sala obtenemos el Índice mediante obtenerSalaCinePosicion:
+        int posicion = controlCine.buscarSalaCine(jComboBoxSala.getSelectedItem().toString());
+        System.out.println(posicion);
+        //con el índice hubicamos la sala en el arraylist y le asignamos el valor de los boletos vendidos:
+        controlCine.salasCine[posicion].setAsientosVendidos(boletosVendidos);
+
+        //comprobando que se haya creado la sala:
+        System.out.println(controlCine.obtenerSalaCineNombre(Objects.requireNonNull(jComboBoxSala.getSelectedItem()).toString()));
+
+
+        //borrando los campos de texto:
+        BoletosVendidos.setText("0");
+
+
     }//GEN-LAST:event_obtnerImporteTotalActionPerformed
 
     private void NombreSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreSalaActionPerformed

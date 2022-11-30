@@ -11,35 +11,43 @@ package cine;
 public class cCine {
     
     private String sala;
+    private double precioEntrada;
     private int numeroAsientos;
-    private int precioEntrada;
+    private int asientosVendidos;
 
 
-    public cCine(String sala, int numAsientos, int precioEntrada ) {
+
+    public cCine(String sala, int numAsientos, double precioEntrada ) {
       this.sala = sala;
       this.numeroAsientos = numAsientos;
       this.precioEntrada = precioEntrada;
-       
+      this.asientosVendidos = 0;
     }
 
-    public void setSala(String sala) {
-        this.sala = sala;
+    public String getSala() {
+        return sala;
+    }
+    public double getPrecioEntrada() {
+        return precioEntrada;
     }
 
-    public void setNumeroAsientos(int numeroAsientos) {
-        this.numeroAsientos = numeroAsientos;
+    public int getNumeroAsientos() {
+        return numeroAsientos;
     }
 
-    public void setPrecioEntrada(int precioEntrada) {
-        this.precioEntrada = precioEntrada;
-    }
+    public int getAsientosVendidos(){
+        return asientosVendidos;}
+
 
     @Override
     public String toString() {
-        return "cCine{" + "sala=" + sala + ", numeroAsientos=" + numeroAsientos + ", precioEntrada=" + precioEntrada + '}';
+        return "sala = " + sala +
+                "\nprecioEntrada = " + precioEntrada +
+                "\nnumeroAsientos = " + numeroAsientos +
+                "\nasientosVendidos = " + asientosVendidos + "\n" ;
     }
 
-   
-
-   
+    public void setAsientosVendidos(int asientosVendidos) {
+        this.asientosVendidos += asientosVendidos;
+    }
 }
