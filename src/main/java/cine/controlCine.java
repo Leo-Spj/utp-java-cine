@@ -18,7 +18,7 @@ public class controlCine {
 
     private cCine[] salasCine;//VALOR POR DEFECTO, 10 SALAS DE CINE
     // Constructor: controlCine crea un arreglo de cCine
-
+    private int cont;
 
     public controlCine() {
         salasCine = new cCine[10];
@@ -92,6 +92,16 @@ public class controlCine {
     //Aqui reutilizo el metodo obtenerSalaCineNombre.
     public void setAsientosVendidos(int posicion, int asientosVendidos) {
         salasCine[posicion].setAsientosVendidos(asientosVendidos);
+    }
+    public String muestraSalas(){
+        String cadena="";
+        for(int i=0; i<=cont;i++){
+            cadena+= salasCine[i].getSala()+"\t"+
+                    salasCine[i].getNumeroAsientos()+"\t"+
+                    salasCine[i].getAsientosVendidos()+"\t"+
+                    salasCine[i].getPrecioEntrada();
+        }
+        return cadena;
     }
 
 
