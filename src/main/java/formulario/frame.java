@@ -310,8 +310,11 @@ public class frame extends javax.swing.JFrame {
         //borrando los campos de texto:
         BoletosVendidos.setText("0");
         
-        //Pasando datos al textArea:
-        jTextArea1.setText(""+oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString()));
+        //Pasando datos al textArea y mostrar su ganancias totales:
+        jTextArea1.setText(""+
+                oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString()) +
+                "Ganancia : "+ oSala.obtenerGanancias(jComboBoxSala.getSelectedItem().toString())
+        );
 
 
     }//GEN-LAST:event_obtnerImporteTotalActionPerformed
@@ -321,9 +324,8 @@ public class frame extends javax.swing.JFrame {
     }//GEN-LAST:event_NombreSalaActionPerformed
 
     private void jComboBoxSalaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxSalaItemStateChanged
-        String categoria = jComboBoxSala.getSelectedItem().toString();
-        jTextField1.setText("Precio:");
-        
+        String sala = jComboBoxSala.getSelectedItem().toString();
+        jTextField1.setText("Precio:" + oSala.obtenerPrecioEntradaNombre(sala) );
     }//GEN-LAST:event_jComboBoxSalaItemStateChanged
 
     private void jComboBoxSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSalaActionPerformed

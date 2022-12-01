@@ -104,8 +104,9 @@ public class controlCine {
         return cadena;
     }
 
-
-
-
+    //Metodo que obtiene el precio de la entrada mediante el nombre de la sala:
+    public double obtenerPrecioEntradaNombre(String sala) {
+        return salasCine[buscarSalaCine(sala)].getPrecioEntrada();
+    }
 }
 
