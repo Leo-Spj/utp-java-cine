@@ -21,7 +21,9 @@ public class frame extends javax.swing.JFrame {
      */
     public frame() {
         initComponents();
+
     }
+    controlCine oSala;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -214,15 +216,15 @@ public class frame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
+    int contador = 0;
     private void CrearSalaActionPerformed(ActionEvent evt) {//GEN-FIRST:event_CrearSalaActionPerformed
 
         
         
         //si el boton ha sido ejecutado mas de una vez, ya no ejecutar la funcion controlCine():
-        int contador = 0;
+
         if (contador == 0) {
-            new controlCine();
+            oSala = new controlCine();
             contador++;
         }
         
@@ -231,20 +233,19 @@ public class frame extends javax.swing.JFrame {
         jComboBoxSala.addItem(NombreSala.getText());
 
         //instanciando la clase cCine dando como parametros los valores de los campos de texto:
-        controlCine.crearSalaCine(
+        oSala.crearSalaCine(
             NombreSala.getText(),
             Integer.parseInt(NumAsientos.getText()),
-            Integer.parseInt(Precio.getText())
+            Double.parseDouble(Precio.getText())
         );
+
+        //comprobando que se haya creado la sala:
+        System.out.println(oSala.obtenerSalaCineNombre(NombreSala.getText()));
 
         //limpiando los campos de texto:
         NombreSala.setText("");
         NumAsientos.setText("");
         Precio.setText("");
-
-        //comprobando que se haya creado la sala:
-        System.out.println(controlCine.obtenerSalaCineNombre(NombreSala.getText()));
-
 
 
 
@@ -261,22 +262,20 @@ public class frame extends javax.swing.JFrame {
 
     private void obtnerImporteTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obtnerImporteTotalActionPerformed
 
-
         //obtner el valor del combobox
         //TIPADO FUERTE! DEJAR COMO RECORDATORIO: String nombreSala = Objects.requireNonNull(jComboBoxSala.getSelectedItem()).toString();
 
         //obtener el valor de los boletos vendidos
         int boletosVendidos = Integer.parseInt(BoletosVendidos.getText());
-        System.out.println(jComboBoxSala.getSelectedItem().toString());
 
         //mediante el nombre de la sala obtenemos el Índice mediante obtenerSalaCinePosicion:
-        int posicion = controlCine.buscarSalaCine(jComboBoxSala.getSelectedItem().toString());
-        System.out.println(posicion);
+        int posicion = oSala.buscarSalaCine(jComboBoxSala.getSelectedItem().toString());
+
         //con el índice hubicamos la sala en el arraylist y le asignamos el valor de los boletos vendidos:
-        controlCine.salasCine[posicion].setAsientosVendidos(boletosVendidos);
+        oSala.setAsientosVendidos(posicion,boletosVendidos);
 
         //comprobando que se haya creado la sala:
-        System.out.println(controlCine.obtenerSalaCineNombre(Objects.requireNonNull(jComboBoxSala.getSelectedItem()).toString()));
+        System.out.println(oSala.obtenerSalaCineNombre(Objects.requireNonNull(jComboBoxSala.getSelectedItem()).toString()));
 
 
         //borrando los campos de texto:
