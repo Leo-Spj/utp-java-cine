@@ -98,8 +98,9 @@ public class controlCine {
         for(int i=0; i<=cont;i++){
             cadena+= salasCine[i].getSala()+"\t"+
                     salasCine[i].getNumeroAsientos()+"\t"+
-                    salasCine[i].getAsientosVendidos()+"\t"+
-                    salasCine[i].getPrecioEntrada();
+                    salasCine[i].getPrecioEntrada()+"\t"+
+                    salasCine[i].getAsientosVendidos();
+                    
         }
         return cadena;
     }
