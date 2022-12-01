@@ -21,7 +21,7 @@ public class controlCine {
     private int cont;
 
     public controlCine() {
-        salasCine = new cCine[10];
+        salasCine = new cCine[10000];
     }
 
 
