@@ -13,7 +13,7 @@ public class controlCine {
     // Constructor: controlCine toma por parametro numSalas, crea un arreglo de cCine
     public controlCine(int numSalas) {
         this.numSalas = numSalas;
-        salasCine = new cCine[numSalas];
+        salasCine = new cCine[numSalas]; 
     } NO BORRAR, NO BORRAR, NO BORRAR   <----*/
 
     private cCine[] salasCine;//VALOR POR DEFECTO, 10 SALAS DE CINE
@@ -28,7 +28,7 @@ public class controlCine {
     //Metodo: crea la sala de cine, recibe por parametro los datos de la sala de cine
     public void crearSalaCine(String sala, int numAsientos, double precioEntrada) {
         //crea la sala de cine
-        cCine salaCine = new cCine(sala, numAsientos, precioEntrada);
+        cCine salaCine = new cCine(sala, numAsientos, precioEntrada); 
         //agrega la sala al arreglo de salas de cine
         for (int i = 0; i < salasCine.length; i++) {
             if (salasCine[i] == null) {
