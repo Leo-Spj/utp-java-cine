@@ -271,7 +271,7 @@ public class frame extends javax.swing.JFrame {
         //Pasando datos al textArea y mostrar su ganancias totales:
         jTextArea1.setText(""+
                 oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString()) +
-                "Ganancia : "+ oSala.obtenerGanancias(jComboBoxSala.getSelectedItem().toString())
+                "Total a pagar = "+ oSala.obtenerGanancias(jComboBoxSala.getSelectedItem().toString())
         );
 
 
