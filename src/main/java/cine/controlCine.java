@@ -2,23 +2,9 @@ package cine;
 
 public class controlCine {
 
-    // Atributos: arreglo de salas de cine cCine
 
-
-    /* NO BORRAR, NO BORRAR, NO BORRAR:  <----
-    //se podrá modificar o se podra tomar por parametro mediante el formulario, OJO:
-    private cCine salasCine[];
-    private int numSalas;
-
-    // Constructor: controlCine toma por parametro numSalas, crea un arreglo de cCine
-    public controlCine(int numSalas) {
-        this.numSalas = numSalas;
-        salasCine = new cCine[numSalas]; 
-    } NO BORRAR, NO BORRAR, NO BORRAR   <----*/
-
-    private cCine[] salasCine;//VALOR POR DEFECTO, 10 SALAS DE CINE
+    private cCine[] salasCine;//VALOR POR DEFECTO, 10000 SALAS DE CINE
     // Constructor: controlCine crea un arreglo de cCine
-    private int cont;
 
     public controlCine() {
         salasCine = new cCine[10000];
@@ -92,17 +78,6 @@ public class controlCine {
     //Aqui reutilizo el metodo obtenerSalaCineNombre.
     public void setAsientosVendidos(int posicion, int asientosVendidos) {
         salasCine[posicion].setAsientosVendidos(asientosVendidos);
-    }
-    public String muestraSalas(){
-        String cadena="";
-        for(int i=0; i<=cont;i++){
-            cadena+= salasCine[i].getSala()+"\t"+
-                    salasCine[i].getNumeroAsientos()+"\t"+
-                    salasCine[i].getPrecioEntrada()+"\t"+
-                    salasCine[i].getAsientosVendidos();
-                    
-        }
-        return cadena;
     }
 
     //Metodo que obtiene el precio de la entrada mediante el nombre de la sala:

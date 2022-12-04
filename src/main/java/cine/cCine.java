@@ -47,6 +47,18 @@ public class cCine {
                 "\nasientosVendidos = " + asientosVendidos + "\n" ;
     }
 
+
+    //Se mostrará como boleta de venta:
+    // toString, se le pasa por parametro el numero de asientos vendidos
+    public String toStringAsientos(int asientosVendidos) {
+        return  "Boleta de Venta\n" +
+                "---------------" +
+                "\nSala : " + sala +
+                "\nPrecio unitario : " + precioEntrada +
+                "\nNumero de asientos : " + asientosVendidos +
+                "\nPrecio total : " + precioEntrada * asientosVendidos + "\n" ;
+    }
+
     public void setAsientosVendidos(int asientosVendidos) {
         this.asientosVendidos += asientosVendidos;
     }

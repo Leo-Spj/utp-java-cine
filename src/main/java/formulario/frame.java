@@ -199,7 +199,6 @@ public class frame extends javax.swing.JFrame {
     private void CrearSalaActionPerformed(ActionEvent evt) {//GEN-FIRST:event_CrearSalaActionPerformed
 
         //si el boton ha sido ejecutado mas de una vez, ya no ejecutar la funcion controlCine():
-
         if (contador == 0) {
             oSala = new controlCine();
             contador++;
@@ -268,9 +267,8 @@ public class frame extends javax.swing.JFrame {
         BoletosVendidos.setText("0");
         
         //Pasando datos al textArea y mostrar su ganancias totales:
-        jTextArea1.setText(""+
-                oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString()) +
-                "Total a pagar = "+ oSala.obtenerGanancias(jComboBoxSala.getSelectedItem().toString())
+        jTextArea1.setText(
+                "" + oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString()).toStringAsientos(boletosVendidos)
         );
         
 
@@ -285,7 +283,8 @@ public class frame extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxSalaItemStateChanged
 
     private void jComboBoxSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSalaActionPerformed
-    jTextField1.setText("Precio:" + oSala.obtenerPrecioEntradaNombre(jComboBoxSala.getSelectedItem().toString()) );
+        jTextField1.setText("Precio:" + oSala.obtenerPrecioEntradaNombre(jComboBoxSala.getSelectedItem().toString()) );
+        jTextArea1.setText("");
     }//GEN-LAST:event_jComboBoxSalaActionPerformed
 
     /**
