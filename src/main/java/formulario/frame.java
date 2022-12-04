@@ -198,15 +198,12 @@ public class frame extends javax.swing.JFrame {
     int contador = 0;
     private void CrearSalaActionPerformed(ActionEvent evt) {//GEN-FIRST:event_CrearSalaActionPerformed
 
-        
-        
         //si el boton ha sido ejecutado mas de una vez, ya no ejecutar la funcion controlCine():
 
         if (contador == 0) {
             oSala = new controlCine();
             contador++;
         }
-        
         
         //agregando nombre de sala al combobox
         jComboBoxSala.addItem(NombreSala.getText());
@@ -224,10 +221,10 @@ public class frame extends javax.swing.JFrame {
         //añadiendo a jTable1 ordenadamente el nombre de sala y cantidad de asientos vendidos:
         DefaultTableModel model;
         model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{NombreSala.getText(), "0"});
-
-
-
+        model.addRow(new Object[]{NombreSala.getText(), 
+            BoletosVendidos.getText(),Precio.getText(),
+            });
+        
 
         //limpiando los campos de texto:
         NombreSala.setText("");
@@ -249,6 +246,8 @@ public class frame extends javax.swing.JFrame {
 
     private void obtnerImporteTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obtnerImporteTotalActionPerformed
 
+        
+        
         //obtner el valor del combobox
         //TIPADO FUERTE! DEJAR COMO RECORDATORIO: String nombreSala = Objects.requireNonNull(jComboBoxSala.getSelectedItem()).toString();
 
@@ -273,7 +272,7 @@ public class frame extends javax.swing.JFrame {
                 oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString()) +
                 "Ganancia : "+ oSala.obtenerGanancias(jComboBoxSala.getSelectedItem().toString())
         );
-
+        
 
     }//GEN-LAST:event_obtnerImporteTotalActionPerformed
 
