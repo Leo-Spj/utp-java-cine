@@ -206,11 +206,9 @@ public class frame extends javax.swing.JFrame {
             contador++;
         }    
         //agregando nombre de sala al combobox
-        if(NombreSala!=null){
+        if(!NombreSala.equals(null) || !NumAsientos.equals(null) ||!Precio.equals(null)){
         jComboBoxSala.addItem(NombreSala.getText());
-        {
-            
-        }}
+        }
         //instanciando la clase cCine dando como parametros los valores de los campos de texto:
         oSala.crearSalaCine(
             NombreSala.getText(),
