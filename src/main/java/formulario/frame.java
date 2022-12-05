@@ -205,41 +205,37 @@ public class frame extends javax.swing.JFrame {
 
     int contador = 0;
     private void CrearSalaActionPerformed(ActionEvent evt) {//GEN-FIRST:event_CrearSalaActionPerformed
-        //Excepción al no completar correctamente los datos
-        try{
+
         //si el boton ha sido ejecutado mas de una vez, ya no ejecutar la funcion controlCine():
         if (contador == 0) {
             oSala = new controlCine();
             contador++;
-        }    
-        //agregando nombre de sala al combobox
-        if(!NombreSala.equals(null) || !NumAsientos.equals(null) ||!Precio.equals(null)){
-        jComboBoxSala.addItem(NombreSala.getText());
         }
-        //instanciando la clase cCine dando como parametros los valores de los campos de texto:
-        oSala.crearSalaCine(
-            NombreSala.getText(),
-            Integer.parseInt(NumAsientos.getText()),
-            Double.parseDouble(Precio.getText())
-        );
-        //comprobando que se haya creado la sala:
-        System.out.println(oSala.obtenerSalaCineNombre(NombreSala.getText()));
 
-        //añadiendo a jTable1 ordenadamente el nombre de sala y cantidad de asientos vendidos:
-        DefaultTableModel model;
-        model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{NombreSala.getText(), 
-            BoletosVendidos.getText(),Precio.getText(),
-            });
-        //limpiando los campos de texto:
-        NombreSala.setText("");
-        NumAsientos.setText("");
-        Precio.setText("");
-        }catch (NumberFormatException e){
-            JOptionPane.showMessageDialog(null, "Rellene los espacios correctamente antes de crear la sala, por favor");
+        //Excepción al no completar correctamente los datos
+        try{
+        //agregando nombre de sala al combobox
+            //si el nombre de la sala o el numero de asientos o el precio está vaci, no se ejecuta la funcion
+            if (NombreSala.getText().isEmpty() || NumAsientos.getText().isEmpty() || Precio.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos");
+            } else {
+                //si no, se ejecuta la funcion
+                oSala.crearSalaCine(
+                        NombreSala.getText(),
+                        Integer.parseInt(NumAsientos.getText()),
+                        Double.parseDouble(Precio.getText())
+                );
+                //agregando nombre de sala al combobox
+                jComboBoxSala.addItem(NombreSala.getText());
+                //limpiando los campos
+                NombreSala.setText("");
+                NumAsientos.setText("");
+                Precio.setText("");
+            }
+
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Error al ingresar datos");
         }
-        
-        
 
     }//GEN-LAST:event_CrearSalaActionPerformed
 
@@ -255,38 +251,35 @@ public class frame extends javax.swing.JFrame {
     private void obtnerImporteTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obtnerImporteTotalActionPerformed
         //Excepción al no completar correctamente los datos de venta
         try {
-        //obtner el valor del combobox
-        //TIPADO FUERTE! DEJAR COMO RECORDATORIO: String nombreSala = Objects.requireNonNull(jComboBoxSala.getSelectedItem()).toString();
+            //obtner el valor del combobox
+            //TIPADO FUERTE! DEJAR COMO RECORDATORIO: String nombreSala = Objects.requireNonNull(jComboBoxSala.getSelectedItem()).toString();
 
-        //obtener el valor de los boletos vendidos
-        int boletosVendidos = Integer.parseInt(BoletosVendidos.getText());
+            //obtener el valor de los boletos vendidos
+            int boletosVendidos = Integer.parseInt(BoletosVendidos.getText());
 
-        //mediante el nombre de la sala obtenemos el Índice mediante obtenerSalaCinePosicion:
-        int posicion = oSala.buscarSalaCine(jComboBoxSala.getSelectedItem().toString());
+            //mediante el nombre de la sala obtenemos el Índice mediante obtenerSalaCinePosicion:
+            int posicion = oSala.buscarSalaCine(jComboBoxSala.getSelectedItem().toString());
 
-        //con el índice hubicamos la sala en el arraylist y le asignamos el valor de los boletos vendidos:
-        oSala.setAsientosVendidos(posicion,boletosVendidos);
+            //con el índice hubicamos la sala en el arraylist y le asignamos el valor de los boletos vendidos:
+            oSala.setAsientosVendidos(posicion,boletosVendidos);
 
-        //comprobando que se haya creado la sala:
-        System.out.println(oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString()));
+            //comprobando que se haya creado la sala:
+            System.out.println(oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString()));
 
 
-        //borrando los campos de texto:
-        BoletosVendidos.setText("0");
-        
-        //Pasando datos al textArea y mostrar su ganancias totales:
-        jTextArea1.setText(
-                "" + oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString()).toStringAsientos(boletosVendidos)
-        );
-        jTextArea3.setText("Precio:" + oSala.obtenerPrecioEntradaNombre(jComboBoxSala.getSelectedItem().toString())+
-                "\nAsientos disponibles:" + oSala.obtenerAsientosDisponibles(jComboBoxSala.getSelectedItem().toString()));
-    }catch(NumberFormatException e){
-    JOptionPane.showMessageDialog(null, "Coloque un valor numérico entero, por favor");
-}        
-        
-       
-        
+            //borrando los campos de texto:
+            BoletosVendidos.setText("0");
 
+            //Pasando datos al textArea y mostrar su ganancias totales:
+            jTextArea1.setText(
+                    "" + oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString()).toStringAsientos(boletosVendidos)
+            );
+            jTextArea3.setText("Precio:" + oSala.obtenerPrecioEntradaNombre(jComboBoxSala.getSelectedItem().toString())+
+                    "\nAsientos disponibles:" + oSala.obtenerAsientosDisponibles(jComboBoxSala.getSelectedItem().toString())
+            );
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Coloque un valor numérico entero, por favor");
+        }
     }//GEN-LAST:event_obtnerImporteTotalActionPerformed
 
     private void NombreSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreSalaActionPerformed
