@@ -5,11 +5,12 @@
 package formulario;
 
 import cine.controlCine;
+import java.awt.TextArea;
 
 
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
-import java.util.Objects;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -198,12 +199,13 @@ public class frame extends javax.swing.JFrame {
     int contador = 0;
     private void CrearSalaActionPerformed(ActionEvent evt) {//GEN-FIRST:event_CrearSalaActionPerformed
 
-        //si el boton ha sido ejecutado mas de una vez, ya no ejecutar la funcion controlCine():
+        
+       //si el boton ha sido ejecutado mas de una vez, ya no ejecutar la funcion controlCine():
         if (contador == 0) {
             oSala = new controlCine();
             contador++;
         }
-        
+        try{
         //agregando nombre de sala al combobox
         jComboBoxSala.addItem(NombreSala.getText());
 
@@ -213,7 +215,6 @@ public class frame extends javax.swing.JFrame {
             Integer.parseInt(NumAsientos.getText()),
             Double.parseDouble(Precio.getText())
         );
-
         //comprobando que se haya creado la sala:
         System.out.println(oSala.obtenerSalaCineNombre(NombreSala.getText()));
 
@@ -223,14 +224,15 @@ public class frame extends javax.swing.JFrame {
         model.addRow(new Object[]{NombreSala.getText(), 
             BoletosVendidos.getText(),Precio.getText(),
             });
-        
-
         //limpiando los campos de texto:
         NombreSala.setText("");
         NumAsientos.setText("");
         Precio.setText("");
-
-       
+        }catch (NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Rellene los espacios correctamente antes de crear la sala, por favor");
+        }
+        
+        
 
     }//GEN-LAST:event_CrearSalaActionPerformed
 
