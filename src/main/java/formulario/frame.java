@@ -111,7 +111,7 @@ public class frame extends javax.swing.JFrame {
         jLabelSala.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabelSala.setForeground(new java.awt.Color(255, 255, 255));
         jLabelSala.setText("Sala");
-        jPanel1.add(jLabelSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 40, 30));
+        jPanel1.add(jLabelSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 40, 30));
 
         jComboBoxSala.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
         jComboBoxSala.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar Sala" }));
@@ -125,7 +125,7 @@ public class frame extends javax.swing.JFrame {
                 jComboBoxSalaActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBoxSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 126, 24));
+        jPanel1.add(jComboBoxSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 126, 24));
 
         jLabelBoletosVendidos.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabelBoletosVendidos.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,8 +152,8 @@ public class frame extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 311, 205, 132));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 90, 32));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 205, 132));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 160, 60));
 
         jLabel2.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
         jLabel2.setText("UTP JAVA CINE");
@@ -291,7 +291,8 @@ public class frame extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxSalaItemStateChanged
 
     private void jComboBoxSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSalaActionPerformed
-        jTextField1.setText("Precio:" + oSala.obtenerPrecioEntradaNombre(jComboBoxSala.getSelectedItem().toString()) );
+        jTextField1.setText("Precio:" + oSala.obtenerPrecioEntradaNombre(jComboBoxSala.getSelectedItem().toString())+
+                "\nAsientos disponibles:" + oSala.obtenerAsientosDisponibles(jComboBoxSala.getSelectedItem().toString()));
         jTextArea1.setText("");
     }//GEN-LAST:event_jComboBoxSalaActionPerformed
 
