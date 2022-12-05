@@ -38,13 +38,25 @@ public class cCine {
     public int getAsientosVendidos(){
         return asientosVendidos;}
 
-
+/* // ToString incial 
     @Override
     public String toString() {
         return "sala = " + sala +
                 "\nprecioEntrada = " + precioEntrada +
                 "\nnumeroAsientos = " + numeroAsientos +
                 "\nasientosVendidos = " + asientosVendidos + "\n" ;
+    }
+*/
+
+    //Se mostrará como boleta de venta:
+    // toString, se le pasa por parametro el numero de asientos vendidos
+    public String toStringAsientos(int asientosVendidos) {
+        return  "Boleta de Venta\n" +
+                "---------------" +
+                "\nSala : " + sala +
+                "\nPrecio unitario : " + precioEntrada +
+                "\nNumero de asientos : " + asientosVendidos +
+                "\nPrecio total : " + precioEntrada * asientosVendidos + "\n" ;
     }
 
     public void setAsientosVendidos(int asientosVendidos) {

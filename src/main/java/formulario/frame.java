@@ -5,11 +5,12 @@
 package formulario;
 
 import cine.controlCine;
+import java.awt.TextArea;
 
 
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
-import java.util.Objects;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -172,10 +173,7 @@ public class frame extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Sala", "Bol. vendidos", "Precio", "Ganancia total"
@@ -187,7 +185,7 @@ public class frame extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel1.setText("ESTADO DE LAS SALAS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, 240, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, 260, 30));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imágenes/Personas.png"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 20, 60, 50));
@@ -200,44 +198,43 @@ public class frame extends javax.swing.JFrame {
 
     int contador = 0;
     private void CrearSalaActionPerformed(ActionEvent evt) {//GEN-FIRST:event_CrearSalaActionPerformed
-
-        
-        
+        //Excepción al no completar correctamente los datos
+        try{
         //si el boton ha sido ejecutado mas de una vez, ya no ejecutar la funcion controlCine():
-
         if (contador == 0) {
             oSala = new controlCine();
             contador++;
-        }
-        
-        
+        }    
         //agregando nombre de sala al combobox
+        if(NombreSala!=null){
         jComboBoxSala.addItem(NombreSala.getText());
-
+        {
+            
+        }}
         //instanciando la clase cCine dando como parametros los valores de los campos de texto:
         oSala.crearSalaCine(
             NombreSala.getText(),
             Integer.parseInt(NumAsientos.getText()),
             Double.parseDouble(Precio.getText())
         );
-
         //comprobando que se haya creado la sala:
         System.out.println(oSala.obtenerSalaCineNombre(NombreSala.getText()));
 
         //añadiendo a jTable1 ordenadamente el nombre de sala y cantidad de asientos vendidos:
         DefaultTableModel model;
         model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{NombreSala.getText(), "0"});
-
-
-
-
+        model.addRow(new Object[]{NombreSala.getText(), 
+            BoletosVendidos.getText(),Precio.getText(),
+            });
         //limpiando los campos de texto:
         NombreSala.setText("");
         NumAsientos.setText("");
         Precio.setText("");
-
-       
+        }catch (NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Rellene los espacios correctamente antes de crear la sala, por favor");
+        }
+        
+        
 
     }//GEN-LAST:event_CrearSalaActionPerformed
 
@@ -251,7 +248,8 @@ public class frame extends javax.swing.JFrame {
     }//GEN-LAST:event_PrecioActionPerformed
 
     private void obtnerImporteTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obtnerImporteTotalActionPerformed
-
+        //Excepción al no completar correctamente los datos de venta
+        try {
         //obtner el valor del combobox
         //TIPADO FUERTE! DEJAR COMO RECORDATORIO: String nombreSala = Objects.requireNonNull(jComboBoxSala.getSelectedItem()).toString();
 
@@ -272,11 +270,15 @@ public class frame extends javax.swing.JFrame {
         BoletosVendidos.setText("0");
         
         //Pasando datos al textArea y mostrar su ganancias totales:
-        jTextArea1.setText(""+
-                oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString()) +
-                "Ganancia : "+ oSala.obtenerGanancias(jComboBoxSala.getSelectedItem().toString())
+        jTextArea1.setText(
+                "" + oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString()).toStringAsientos(boletosVendidos)
         );
-
+    }catch(NumberFormatException e){
+    JOptionPane.showMessageDialog(null, "Coloque un valor numérico entero, por favor");
+}        
+        
+       
+        
 
     }//GEN-LAST:event_obtnerImporteTotalActionPerformed
 
@@ -289,7 +291,8 @@ public class frame extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxSalaItemStateChanged
 
     private void jComboBoxSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSalaActionPerformed
-    jTextField1.setText("Precio:" + oSala.obtenerPrecioEntradaNombre(jComboBoxSala.getSelectedItem().toString()) );
+        jTextField1.setText("Precio:" + oSala.obtenerPrecioEntradaNombre(jComboBoxSala.getSelectedItem().toString()) );
+        jTextArea1.setText("");
     }//GEN-LAST:event_jComboBoxSalaActionPerformed
 
     /**
@@ -356,14 +359,17 @@ public class frame extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private int jLabelNumAsientos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet."); 
+// Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     private int jLabelPrecioNiños() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet."); 
+// Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     private int jLabelPrecioAdultos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet."); 
+// Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
