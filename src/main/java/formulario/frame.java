@@ -178,7 +178,7 @@ public class frame extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Sala", "Bol. vendidos", "Precio", "Ganancia"
+                "Sala", "Bol. vendidos", "Precio", "Ganancia total"
             }
         ));
         jScrollPane3.setViewportView(jTable1);
