@@ -38,7 +38,7 @@ public class cCine {
     public int getAsientosVendidos(){
         return asientosVendidos;}
 
-
+/* // ToString incial 
     @Override
     public String toString() {
         return "sala = " + sala +
@@ -46,7 +46,7 @@ public class cCine {
                 "\nnumeroAsientos = " + numeroAsientos +
                 "\nasientosVendidos = " + asientosVendidos + "\n" ;
     }
-
+*/
 
     //Se mostrará como boleta de venta:
     // toString, se le pasa por parametro el numero de asientos vendidos

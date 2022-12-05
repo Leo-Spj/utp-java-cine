@@ -198,17 +198,19 @@ public class frame extends javax.swing.JFrame {
 
     int contador = 0;
     private void CrearSalaActionPerformed(ActionEvent evt) {//GEN-FIRST:event_CrearSalaActionPerformed
-
-        
-       //si el boton ha sido ejecutado mas de una vez, ya no ejecutar la funcion controlCine():
+        //Excepción al no completar correctamente los datos
+        try{
+        //si el boton ha sido ejecutado mas de una vez, ya no ejecutar la funcion controlCine():
         if (contador == 0) {
             oSala = new controlCine();
             contador++;
-        }
-        try{
+        }    
         //agregando nombre de sala al combobox
+        if(NombreSala!=null){
         jComboBoxSala.addItem(NombreSala.getText());
-
+        {
+            
+        }}
         //instanciando la clase cCine dando como parametros los valores de los campos de texto:
         oSala.crearSalaCine(
             NombreSala.getText(),
@@ -246,9 +248,8 @@ public class frame extends javax.swing.JFrame {
     }//GEN-LAST:event_PrecioActionPerformed
 
     private void obtnerImporteTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obtnerImporteTotalActionPerformed
-
-        
-        
+        //Excepción al no completar correctamente los datos de venta
+        try {
         //obtner el valor del combobox
         //TIPADO FUERTE! DEJAR COMO RECORDATORIO: String nombreSala = Objects.requireNonNull(jComboBoxSala.getSelectedItem()).toString();
 
@@ -272,6 +273,11 @@ public class frame extends javax.swing.JFrame {
         jTextArea1.setText(
                 "" + oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString()).toStringAsientos(boletosVendidos)
         );
+    }catch(NumberFormatException e){
+    JOptionPane.showMessageDialog(null, "Coloque un valor numérico entero, por favor");
+}        
+        
+       
         
 
     }//GEN-LAST:event_obtnerImporteTotalActionPerformed

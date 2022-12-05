@@ -13,6 +13,7 @@ public class controlCine {
 
     //Metodo: crea la sala de cine, recibe por parametro los datos de la sala de cine
     public void crearSalaCine(String sala, int numAsientos, double precioEntrada) {
+        try{
         //crea la sala de cine
         cCine salaCine = new cCine(sala, numAsientos, precioEntrada); 
         //agrega la sala al arreglo de salas de cine
@@ -22,6 +23,10 @@ public class controlCine {
                 break;
             }
         }
+        }catch(Exception e){
+            
+        }
+        
     }
 
 
