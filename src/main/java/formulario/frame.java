@@ -51,9 +51,10 @@ public class frame extends javax.swing.JFrame {
         obtnerImporteTotal = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -153,7 +154,6 @@ public class frame extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 205, 132));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 160, 60));
 
         jLabel2.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
         jLabel2.setText("UTP JAVA CINE");
@@ -162,6 +162,13 @@ public class frame extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
         jLabel3.setText("VENTA DE ENTRADAS");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
+
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jTextArea3.setAutoscrolls(false);
+        jScrollPane4.setViewportView(jTextArea3);
+
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 170, 60));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imágenes/CintaCine.png"))); // NOI18N
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 380, 180));
@@ -271,6 +278,8 @@ public class frame extends javax.swing.JFrame {
         jTextArea1.setText(
                 "" + oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString()).toStringAsientos(boletosVendidos)
         );
+        jTextArea3.setText("Precio:" + oSala.obtenerPrecioEntradaNombre(jComboBoxSala.getSelectedItem().toString())+
+                "\nAsientos disponibles:" + oSala.obtenerAsientosDisponibles(jComboBoxSala.getSelectedItem().toString()));
     }catch(NumberFormatException e){
     JOptionPane.showMessageDialog(null, "Coloque un valor numérico entero, por favor");
 }        
@@ -289,7 +298,7 @@ public class frame extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxSalaItemStateChanged
 
     private void jComboBoxSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSalaActionPerformed
-        jTextField1.setText("Precio:" + oSala.obtenerPrecioEntradaNombre(jComboBoxSala.getSelectedItem().toString())+
+        jTextArea3.setText("Precio:" + oSala.obtenerPrecioEntradaNombre(jComboBoxSala.getSelectedItem().toString())+
                 "\nAsientos disponibles:" + oSala.obtenerAsientosDisponibles(jComboBoxSala.getSelectedItem().toString()));
         jTextArea1.setText("");
     }//GEN-LAST:event_jComboBoxSalaActionPerformed
@@ -351,9 +360,10 @@ public class frame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextArea jTextArea3;
     private javax.swing.JButton obtnerImporteTotal;
     // End of variables declaration//GEN-END:variables
 
