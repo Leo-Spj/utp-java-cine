@@ -14,7 +14,6 @@ public class cCine {
     private double precioEntrada;
     private int numeroAsientos;
     private int asientosVendidos;
-    private int ganancia;
 
 
     public cCine(String sala, int numAsientos, double precioEntrada ) {
@@ -22,13 +21,8 @@ public class cCine {
       this.numeroAsientos = numAsientos;
       this.precioEntrada = precioEntrada;
       this.asientosVendidos = 0;
-      this.ganancia=0;
     }
 
-    public int getGanancia() {
-        return ganancia;
-    }
-    
     public String getSala() {
         return sala;
     }
@@ -49,8 +43,7 @@ public class cCine {
         return "sala = " + sala +
                 "\nprecioEntrada = " + precioEntrada +
                 "\nnumeroAsientos = " + numeroAsientos +
-                "\nasientosVendidos = " + asientosVendidos + 
-                "\nGanancia por Sala = "+ ganancia+ "\n" ;
+                "\nasientosVendidos = " + asientosVendidos + "\n" ;
     }
 
 

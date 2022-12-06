@@ -60,6 +60,8 @@ public class frame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -182,16 +184,16 @@ public class frame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Sala", "Bol. vendidos", "Precio", "Ganancia total"
+                "Sala", "Precio", "Capacidad"
             }
         ));
         jScrollPane3.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 340, 270));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 210, 160));
 
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel1.setText("ESTADO DE LAS SALAS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, 260, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 260, 30));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imágenes/Personas.png"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 20, 60, 50));
@@ -202,7 +204,13 @@ public class frame extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 430, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 410, -1, -1));
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane2.setViewportView(jTextArea2);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 230, 140));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imágenes/FondoAsientos.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 400, 470));
@@ -242,8 +250,9 @@ public class frame extends javax.swing.JFrame {
                 model = (DefaultTableModel) jTable1.getModel();
                 model.addRow(new Object[]{
                         NombreSala.getText(),
-                        BoletosVendidos.getText(),
-                        Precio.getText(),}
+                        Precio.getText(),
+                        NumAsientos.getText(),}
+                        
                 );
 
 
@@ -320,7 +329,7 @@ public class frame extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxSalaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jTextArea1.setText("Sala: ="+oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString())+
+        jTextArea2.setText("Sala: ="+oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString())+
         "\nGanancia total: "+ oSala.obtenerGanancias(jComboBoxSala.getSelectedItem().toString()));
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -382,10 +391,12 @@ public class frame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelSala;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JButton obtnerImporteTotal;
     // End of variables declaration//GEN-END:variables
