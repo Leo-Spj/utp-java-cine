@@ -10,7 +10,7 @@ public class controlCine {
         salasCine = new cCine[10000];
     }
 
-
+     //Metodo constructor que crea el arreglo salasCine
     //Metodo: crea la sala de cine, recibe por parametro los datos de la sala de cine
     public void crearSalaCine(String sala, int numAsientos, double precioEntrada) {
         

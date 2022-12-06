@@ -43,7 +43,6 @@ public class frame extends javax.swing.JFrame {
         Precio = new javax.swing.JTextField();
         CrearSala = new javax.swing.JButton();
         jLabelSala = new javax.swing.JLabel();
-        jComboBoxSala = new javax.swing.JComboBox<>();
         jLabelBoletosVendidos = new javax.swing.JLabel();
         BoletosVendidos = new javax.swing.JTextField();
         obtnerImporteTotal = new javax.swing.JButton();
@@ -55,13 +54,13 @@ public class frame extends javax.swing.JFrame {
         jTextArea3 = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jComboBoxSala = new javax.swing.JComboBox<>();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        jComboBoxSala1 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -113,21 +112,7 @@ public class frame extends javax.swing.JFrame {
         jLabelSala.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabelSala.setForeground(new java.awt.Color(255, 255, 255));
         jLabelSala.setText("Sala");
-        jPanel1.add(jLabelSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 40, 30));
-
-        jComboBoxSala.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
-        jComboBoxSala.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar Sala" }));
-        jComboBoxSala.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jComboBoxSalaItemStateChanged(evt);
-            }
-        });
-        jComboBoxSala.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxSalaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jComboBoxSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 126, 24));
+        jPanel1.add(jLabelSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 40, 30));
 
         jLabelBoletosVendidos.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabelBoletosVendidos.setForeground(new java.awt.Color(255, 255, 255));
@@ -177,6 +162,20 @@ public class frame extends javax.swing.JFrame {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imágenes/LogoCanchita.png"))); // NOI18N
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 210, 180));
 
+        jComboBoxSala.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
+        jComboBoxSala.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar Sala" }));
+        jComboBoxSala.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBoxSalaItemStateChanged(evt);
+            }
+        });
+        jComboBoxSala.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxSalaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jComboBoxSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 126, 24));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 470));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -184,12 +183,12 @@ public class frame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Sala", "Precio", "Capacidad"
+                "Sala", "Precio", "Capacidad", "Asientos Vendidos", "Ganancia"
             }
         ));
         jScrollPane3.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 210, 160));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 370, 160));
 
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel1.setText("ESTADO DE LAS SALAS");
@@ -204,13 +203,26 @@ public class frame extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 410, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, -1, -1));
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
-
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 230, 140));
+        jComboBoxSala1.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
+        jComboBoxSala1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar Sala" }));
+        jComboBoxSala1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBoxSala1ItemStateChanged(evt);
+            }
+        });
+        jComboBoxSala1.addHierarchyListener(new java.awt.event.HierarchyListener() {
+            public void hierarchyChanged(java.awt.event.HierarchyEvent evt) {
+                jComboBoxSala1HierarchyChanged(evt);
+            }
+        });
+        jComboBoxSala1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxSala1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBoxSala1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 126, 24));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imágenes/FondoAsientos.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 400, 470));
@@ -226,7 +238,6 @@ public class frame extends javax.swing.JFrame {
             oSala = new controlCine();
             contador++;
         }
-
         //Excepción al no completar correctamente los datos
         try{
             //si el nombre de la sala o el número de asientos o el precio está vacio, no se ejecuta la funcion
@@ -251,11 +262,11 @@ public class frame extends javax.swing.JFrame {
                 model.addRow(new Object[]{
                         NombreSala.getText(),
                         Precio.getText(),
-                        NumAsientos.getText(),}
+                        NumAsientos.getText(),
+                        
+                    }
                         
                 );
-
-
                 //limpiando los campos
                 NombreSala.setText("");
                 NumAsientos.setText("");
@@ -263,7 +274,6 @@ public class frame extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "Por favor, ingrese datos válidos");
             }
-
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "Error al ingresar datos");
         }
@@ -295,7 +305,7 @@ public class frame extends javax.swing.JFrame {
             oSala.setAsientosVendidos(posicion,boletosVendidos);
 
             //comprobando que se haya creado la sala:
-            System.out.println(oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString()));
+            //System.out.println(oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString()));
 
 
             //borrando los campos de texto:
@@ -329,10 +339,24 @@ public class frame extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxSalaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jTextArea2.setText("Sala: ="+oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString())+
+        jTextArea1.setText("Sala: ="+oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString())+
         "\nGanancia total: "+ oSala.obtenerGanancias(jComboBoxSala.getSelectedItem().toString()));
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jComboBoxSala1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxSala1ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxSala1ItemStateChanged
+
+    private void jComboBoxSala1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSala1ActionPerformed
+        jTextArea3.setText("Precio:" + oSala.obtenerPrecioEntradaNombre(jComboBoxSala.getSelectedItem().toString())+
+                "\nAsientos disponibles: " + oSala.obtenerAsientosDisponibles(jComboBoxSala.getSelectedItem().toString()));
+        jTextArea1.setText("");
+    }//GEN-LAST:event_jComboBoxSala1ActionPerformed
+
+    private void jComboBoxSala1HierarchyChanged(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_jComboBoxSala1HierarchyChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxSala1HierarchyChanged
 
     /**
      * @param args the command line arguments
@@ -377,6 +401,7 @@ public class frame extends javax.swing.JFrame {
     private javax.swing.JTextField Precio;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBoxSala;
+    private javax.swing.JComboBox<String> jComboBoxSala1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -391,12 +416,10 @@ public class frame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelSala;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JButton obtnerImporteTotal;
     // End of variables declaration//GEN-END:variables
