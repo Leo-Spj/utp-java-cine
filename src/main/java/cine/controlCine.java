@@ -20,7 +20,6 @@ public class controlCine {
         for (int i = 0; i < salasCine.length; i++) {
             if (salasCine[i] == null) {
                 salasCine[i] = salaCine;
-                break;
             }
         }   
     }
@@ -33,7 +32,6 @@ public class controlCine {
             if (salasCine[i] != null) {
                 if (salasCine[i].getSala().equals(sala)) {
                     posicion = i;
-                    break;
                 }
             }
         }

@@ -244,9 +244,10 @@ public class frame extends javax.swing.JFrame {
             if (NombreSala.getText().isEmpty() || NumAsientos.getText().isEmpty() || Precio.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos");
 
-            //si la entrada de datos no corresponde a tu tipo de dato: (Al parecer no entra por aquí, podemos quitar esta excepción. pero si funciona no lo toquen)
+            //si la entrada de datos no corresponde a su tipo de dato (Al parecer no entra por aquí, podemos quitar esta excepción. pero si funciona no lo toquen)
             } else if(Integer.parseInt(NumAsientos.getText()) > 0 && Integer.parseInt(Precio.getText()) > 0){
 
+                //se crea la sala con los datos ingresados mediante el metodo crearSala()
                 oSala.crearSalaCine(
                         NombreSala.getText(),
                         Integer.parseInt(NumAsientos.getText()),
@@ -371,7 +372,6 @@ public class frame extends javax.swing.JFrame {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
                 }
             }
         } catch (ClassNotFoundException ex) {
