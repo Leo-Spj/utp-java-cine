@@ -2,19 +2,16 @@ package cine;
 
 public class controlCine {
 
-
+    //todos los atributos son privados
     private cCine[] salasCine;//VALOR POR DEFECTO, 10000 SALAS DE CINE
     // Constructor: controlCine crea un arreglo de cCine
-
+    //Longitud del arreglo
     public controlCine() {
         salasCine = new cCine[10000];
     }
-
-     //Metodo constructor que crea el arreglo salasCine
     //Metodo: crea la sala de cine, recibe por parametro los datos de la sala de cine
     public void crearSalaCine(String sala, int numAsientos, double precioEntrada) {
-        
-        //crea la sala de cine
+        //creación de única sala de cine
         cCine salaCine = new cCine(sala, numAsientos, precioEntrada); 
         //agrega la sala al arreglo de salas de cine
         for (int i = 0; i < salasCine.length; i++) {
@@ -23,8 +20,6 @@ public class controlCine {
             }
         }   
     }
-
-
     //Metodo: busca una sala de cine por su nombre de sala y devuelve la posicion en el arreglo:
     public int buscarSalaCine(String sala) {
         int posicion = 0;
@@ -37,18 +32,14 @@ public class controlCine {
         }
         return posicion;
     }
-
     //Metodo: devuelvo el objeto de cCine mediante la posicion en el arreglo:
     public cCine obtenerSalaCinePosicion(int posicion) {
         return salasCine[posicion];
     }
-
     //Metodo: fusionando obtenerSalaCine y buscarSalaCine, devuelve el objeto de cCine mediante el nombre de la sala:
     public  cCine obtenerSalaCineNombre(String sala) {
         return salasCine[buscarSalaCine(sala)];
     }
-
-
     //Metodo: devuelvo el número de asientos disponibles de la sala:
     //Aqui reutilizo el metodo obtenerSalaCineNombre.
     public int obtenerAsientosDisponibles(String sala) {
@@ -73,15 +64,15 @@ public class controlCine {
         return salasCine[buscarSalaCine(sala)].getAsientosVendidos() * salasCine[buscarSalaCine(sala)].getPrecioEntrada();
     }
 
-    //Metodo: setea los asientos vendidos de la sala mediante la posicion del arreglo:
+    //Metodo que obtiene el precio de la entrada mediante el nombre de la sala:
+    public double obtenerPrecioEntradaNombre(String sala) {
+        return salasCine[buscarSalaCine(sala)].getPrecioEntrada();
+    }
+    //Procedimiento: setea los asientos vendidos de la sala mediante la posicion del arreglo:
     //Aqui reutilizo el metodo obtenerSalaCineNombre.
     public void setAsientosVendidos(int posicion, int asientosVendidos) {
         salasCine[posicion].setAsientosVendidos(asientosVendidos);
     }
 
-    //Metodo que obtiene el precio de la entrada mediante el nombre de la sala:
-    public double obtenerPrecioEntradaNombre(String sala) {
-        return salasCine[buscarSalaCine(sala)].getPrecioEntrada();
-    }
 }
 
