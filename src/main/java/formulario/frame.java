@@ -6,8 +6,6 @@ package formulario;
 
 import cine.controlCine;
 import java.awt.TextArea;
-
-
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
@@ -61,6 +59,7 @@ public class frame extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -197,6 +196,14 @@ public class frame extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imágenes/Personas.png"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 20, 60, 50));
 
+        jButton1.setText("Buscar Sala");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 430, -1, -1));
+
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imágenes/FondoAsientos.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 400, 470));
 
@@ -235,7 +242,8 @@ public class frame extends javax.swing.JFrame {
                 model = (DefaultTableModel) jTable1.getModel();
                 model.addRow(new Object[]{
                         NombreSala.getText(),
-                        BoletosVendidos.getText(),Precio.getText(),}
+                        BoletosVendidos.getText(),
+                        Precio.getText(),}
                 );
 
 
@@ -291,6 +299,7 @@ public class frame extends javax.swing.JFrame {
             jTextArea3.setText("Precio:" + oSala.obtenerPrecioEntradaNombre(jComboBoxSala.getSelectedItem().toString())+
                     "\nAsientos disponibles:" + oSala.obtenerAsientosDisponibles(jComboBoxSala.getSelectedItem().toString())
             );
+
         }catch(NumberFormatException e){
             JOptionPane.showMessageDialog(null, "Coloque un valor numérico entero, por favor");
         }
@@ -306,9 +315,15 @@ public class frame extends javax.swing.JFrame {
 
     private void jComboBoxSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSalaActionPerformed
         jTextArea3.setText("Precio:" + oSala.obtenerPrecioEntradaNombre(jComboBoxSala.getSelectedItem().toString())+
-                "\nAsientos disponibles:" + oSala.obtenerAsientosDisponibles(jComboBoxSala.getSelectedItem().toString()));
+                "\nAsientos disponibles: " + oSala.obtenerAsientosDisponibles(jComboBoxSala.getSelectedItem().toString()));
         jTextArea1.setText("");
     }//GEN-LAST:event_jComboBoxSalaActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        jTextArea1.setText("Sala: ="+oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString())+
+        "\nGanancia total: "+ oSala.obtenerGanancias(jComboBoxSala.getSelectedItem().toString()));
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -351,6 +366,7 @@ public class frame extends javax.swing.JFrame {
     private javax.swing.JTextField NombreSala;
     private javax.swing.JTextField NumAsientos;
     private javax.swing.JTextField Precio;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBoxSala;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
