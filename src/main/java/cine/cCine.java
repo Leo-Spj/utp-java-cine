@@ -14,7 +14,7 @@ public class cCine {
     private double precioEntrada;
     private int numeroAsientos;
     private int asientosVendidos;
-    private int ganancia;
+    
    //Metodo constructor  de la clase con 3 parármetros. El atributo de asientos vendidos se inicializa con cero
     public cCine(String sala, int numAsientos, double precioEntrada ) {
       this.sala = sala;
