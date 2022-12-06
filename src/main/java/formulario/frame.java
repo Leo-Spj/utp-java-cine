@@ -214,23 +214,37 @@ public class frame extends javax.swing.JFrame {
 
         //Excepción al no completar correctamente los datos
         try{
-        //agregando nombre de sala al combobox
-            //si el nombre de la sala o el numero de asientos o el precio está vaci, no se ejecuta la funcion
+            //si el nombre de la sala o el número de asientos o el precio está vacio, no se ejecuta la funcion
             if (NombreSala.getText().isEmpty() || NumAsientos.getText().isEmpty() || Precio.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos");
-            } else {
-                //si no, se ejecuta la funcion
+
+            //si la entrada de datos no corresponde a tu tipo de dato: (Al parecer no entra por aquí, podemos quitar esta excepción. pero si funciona no lo toquen)
+            } else if(Integer.parseInt(NumAsientos.getText()) > 0 && Integer.parseInt(Precio.getText()) > 0){
+
                 oSala.crearSalaCine(
                         NombreSala.getText(),
                         Integer.parseInt(NumAsientos.getText()),
                         Double.parseDouble(Precio.getText())
                 );
+
                 //agregando nombre de sala al combobox
                 jComboBoxSala.addItem(NombreSala.getText());
+
+                //añadiendo a jTable1 ordenadamente el nombre de sala y cantidad de asientos vendidos:
+                DefaultTableModel model;
+                model = (DefaultTableModel) jTable1.getModel();
+                model.addRow(new Object[]{
+                        NombreSala.getText(),
+                        BoletosVendidos.getText(),Precio.getText(),}
+                );
+
+
                 //limpiando los campos
                 NombreSala.setText("");
                 NumAsientos.setText("");
                 Precio.setText("");
+            } else {
+                JOptionPane.showMessageDialog(null, "Por favor, ingrese datos válidos");
             }
 
         }catch(Exception e){
