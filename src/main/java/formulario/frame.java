@@ -270,7 +270,7 @@ public class frame extends javax.swing.JFrame {
     }//GEN-LAST:event_CrearSalaActionPerformed
 
     private void BoletosVendidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoletosVendidosActionPerformed
-
+        
 
     }//GEN-LAST:event_BoletosVendidosActionPerformed
 
@@ -295,7 +295,12 @@ public class frame extends javax.swing.JFrame {
 
             //comprobando que se haya creado la sala:
             //System.out.println(oSala.obtenerSalaCineNombre(jComboBoxSala.getSelectedItem().toString()));
-
+            
+            // mostrar el número si es entero
+            if(oSala.obtenerAsientosDisponibles(jComboBoxSala.getSelectedItem().toString())<0){
+                JOptionPane.showMessageDialog(null, "numero de boletos excedido");
+            }
+            
 
             //borrando los campos de texto:
             BoletosVendidos.setText("0");
