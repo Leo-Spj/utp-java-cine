@@ -231,16 +231,11 @@ public class frame extends javax.swing.JFrame {
             if (NombreSala.getText().isEmpty() || NumAsientos.getText().isEmpty() || Precio.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos");
 
-<<<<<<< HEAD
             //si la entrada de datos no corresponde a su tipo de dato (Al parecer no entra por aquí, podemos quitar esta excepción. pero si funciona no lo toquen)
             } else if(Integer.parseInt(NumAsientos.getText()) > 0 && Integer.parseInt(Precio.getText()) > 0){
 
                 //se crea la sala con los datos ingresados mediante el metodo crearSala()
-=======
-            //Si la entrada de datos no corresponde a tu tipo de dato: 
-            } else if(Integer.parseInt(NumAsientos.getText()) > 0 && Integer.parseInt(Precio.getText()) > 0){
-                //llamado al metodo para instanciar el objeto
->>>>>>> dcfba9981618161c5c7a17d697186b5afc0edcb4
+
                 oSala.crearSalaCine(
                         NombreSala.getText(),
                         Integer.parseInt(NumAsientos.getText()),
