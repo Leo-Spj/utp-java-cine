@@ -58,7 +58,6 @@ public class frame extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
@@ -117,14 +116,14 @@ public class frame extends javax.swing.JFrame {
         jLabelBoletosVendidos.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabelBoletosVendidos.setForeground(new java.awt.Color(255, 255, 255));
         jLabelBoletosVendidos.setText("Boletos vendidos");
-        jPanel1.add(jLabelBoletosVendidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 111, -1));
+        jPanel1.add(jLabelBoletosVendidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 111, -1));
 
         BoletosVendidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BoletosVendidosActionPerformed(evt);
             }
         });
-        jPanel1.add(BoletosVendidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 70, 30));
+        jPanel1.add(BoletosVendidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 70, 30));
 
         obtnerImporteTotal.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         obtnerImporteTotal.setText("Vender");
@@ -133,13 +132,13 @@ public class frame extends javax.swing.JFrame {
                 obtnerImporteTotalActionPerformed(evt);
             }
         });
-        jPanel1.add(obtnerImporteTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 386, 105, 37));
+        jPanel1.add(obtnerImporteTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 105, 37));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 205, 132));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 250, 132));
 
         jLabel2.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
         jLabel2.setText("UTP JAVA CINE");
@@ -154,7 +153,7 @@ public class frame extends javax.swing.JFrame {
         jTextArea3.setAutoscrolls(false);
         jScrollPane4.setViewportView(jTextArea3);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 170, 60));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 260, 50));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imágenes/CintaCine.png"))); // NOI18N
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 380, 180));
@@ -197,19 +196,11 @@ public class frame extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imágenes/Personas.png"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, 60, 50));
 
-        jButton1.setText("Mostrar Ganancia de la sala");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 410, -1, -1));
-
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, -1, 70));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, 260, 100));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imágenes/FondoAsientos.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 400, 470));
@@ -313,6 +304,9 @@ public class frame extends javax.swing.JFrame {
                     "\nAsientos disponibles:" + oSala.obtenerAsientosDisponibles(jComboBoxSala.getSelectedItem().toString())
             );
 
+            //Empleando función:
+            funcionResuenGanancia();
+
         }catch(NumberFormatException e){
             JOptionPane.showMessageDialog(null, "Coloque un valor numérico entero, por favor");
         }
@@ -331,13 +325,19 @@ public class frame extends javax.swing.JFrame {
         jTextArea3.setText("Precio:" + oSala.obtenerPrecioEntradaNombre(jComboBoxSala.getSelectedItem().toString())+
                 "\nAsientos disponibles: " + oSala.obtenerAsientosDisponibles(jComboBoxSala.getSelectedItem().toString()));
         jTextArea1.setText("");
+
+        //Empleando función:
+        funcionResuenGanancia();
     }//GEN-LAST:event_jComboBoxSalaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-        jTextArea2.setText("Sala selecionada: "+jComboBoxSala.getSelectedItem()+"\nGanancia total: "+ oSala.obtenerGanancias(jComboBoxSala.getSelectedItem().toString()));
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    //esta funcion mostrará el resumen de ganancias de cada sala
+    public void funcionResuenGanancia(){
+        jTextArea2.setText(
+                "Sala selecionada: "+jComboBoxSala.getSelectedItem()+
+                "\nGanancia total: "+ oSala.obtenerGanancias(jComboBoxSala.getSelectedItem().toString()) +
+                "\nBoletos Vendidos: "+ oSala.obtenerAsientosVendidos(jComboBoxSala.getSelectedItem().toString())
+        );
+    }
 
     /**
      * @param args the command line arguments
@@ -380,7 +380,6 @@ public class frame extends javax.swing.JFrame {
     private javax.swing.JTextField NombreSala;
     private javax.swing.JTextField NumAsientos;
     private javax.swing.JTextField Precio;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBoxSala;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
