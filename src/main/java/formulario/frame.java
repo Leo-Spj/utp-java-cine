@@ -10,8 +10,12 @@ import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author user
+ * @author
+ * U21315835	ESPEJO MOYA LEONARDO CESAR
+ * U22100113	MORALES MENDEZ LUIS HUMBERTO
+ * U21319410	RAMOS SARAVIA DANIEL ENRIQUE
+ * U21306695	SANCHEZ MANDUJANO LESLIE CRISTINA
+ * U21303568	TRUJILLO URRUNAGA RICARDO ENRIQUE
  */
 public class frame extends javax.swing.JFrame {
     
