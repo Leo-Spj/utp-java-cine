@@ -38,24 +38,24 @@ public class controlCine {
     public cCine obtenerSalaCinePosicion(int posicion) {
         return salasCine[posicion];
     }
-    //Metodo: fusionando obtenerSalaCine y buscarSalaCine, devuelve el objeto de cCine mediante el nombre de la sala:
+    //Metodo: Reutilizando buscarSalaCine, devuelve el objeto de cCine mediante el nombre de la sala:
     public  cCine obtenerSalaCineNombre(String sala) {
         return salasCine[buscarSalaCine(sala)];
     }
     //Metodo: devuelvo el número de asientos disponibles de la sala:
-    //Aqui reutilizo el metodo obtenerSalaCineNombre.
+    //Reutilizando obtenerSalaCineNombre
     public int obtenerAsientosDisponibles(String sala) {
-        return salasCine[buscarSalaCine(sala)].getNumeroAsientos() - salasCine[buscarSalaCine(sala)].getAsientosVendidos();
+        return obtenerSalaCineNombre(sala).getNumeroAsientos() - obtenerSalaCineNombre(sala).getAsientosVendidos();
     }
 
     //Metodo: devuelvo el número de asientos vendidos de la sala:
-    //Aqui reutilizo el metodo obtenerSalaCineNombre.
+    //Aqui reutilizo el metodo buscarSalaCine
     public int obtenerAsientosVendidos(String sala) {
         return salasCine[buscarSalaCine(sala)].getAsientosVendidos();
     }
 
     //Metodo: devuelvo el precio de la entrada de la sala:
-    //Aqui reutilizo el metodo obtenerSalaCineNombre.
+    //Aqui reutilizo el metodo buscarSalaCine
     public double obtenerPrecioEntrada(String sala) {
         return salasCine[buscarSalaCine(sala)].getPrecioEntrada();
     }
