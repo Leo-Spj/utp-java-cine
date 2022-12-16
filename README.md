@@ -8,10 +8,10 @@ Muestra del ingreso de datos:
 
 [![datos.jpg](https://i.postimg.cc/ZKc4HnsW/datos.jpg)](https://postimg.cc/QHH2x83D)
 
- ## Maestro
+ ## Maestro:
  * Lizardo Silva
 
- ## @authors
+ ## Equipo:
  * U21315835	ESPEJO MOYA LEONARDO CESAR
  * U22100113	MORALES MENDEZ LUIS HUMBERTO
  * U21319410	RAMOS SARAVIA DANIEL ENRIQUE
